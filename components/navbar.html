@@ -1,0 +1,60 @@
+
+  <link rel="stylesheet" href="../css/navbar.css">
+
+
+<header class="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="../assets/logo.png" class="logo-img">
+      <span>Socorro Teen</span>
+    </div>
+
+    <!-- MENU DESKTOP -->
+    <nav class="menu desktop">
+      <a href="../index.html">🏠 Início</a>
+      <a href="../pages/primeiros-socorros.html">🚑 Primeiros Socorros</a>
+      <a href="../pages/socorro-ia.html">🤖 Socorro IA</a>
+      <a href="../pages/simulador.html">🎮 Simulador</a>
+      <a href="../pages/sobre.html">📚 Sobre</a>
+    </nav>
+
+    <!-- BOTÃO LOGIN -->
+    <div class="user-area">
+      <button class="btn-login">➡] Entrar</button>
+    </div>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  </div>
+
+  <!-- MENU MOBILE -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="../index.html">🏠 Início</a>
+    <a href="../pages/primeiros-socorros.html">🚑 Primeiros Socorros</a>
+    <a href="../pages/socorro-ia.html">🤖 Socorro IA</a>
+    <a href="../pages/simulador.html">🎮 Simulador</a>
+    <a href="../pages/sobre.html">📚 Sobre</a>
+    <button class="btn-login full">Entrar</button>
+  </div>
+
+
+  <script>
+  // PEGAR PÁGINA ATUAL
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // PEGAR TODOS OS LINKS
+  const links = document.querySelectorAll(".menu a");
+
+  links.forEach(link => {
+    const linkPage = link.getAttribute("href").split("/").pop();
+
+    if (currentPage === linkPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+</header>

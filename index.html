@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Socorro Teen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- FONTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div id="navbar-container"></div>
+<script src="../js/loadNavbar.js"></script>
+
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Socorro Teen 🚑</h1>
+
+  <p>
+    Aprenda primeiros socorros de forma 
+    <span class="red">rápida</span>, 
+    <span class="green">fácil</span> e 
+    <span class="blue">divertida</span>.
+  </p>
+
+  <div class="hero-buttons">
+
+    <a href="../pages/emergencia-agora.html" class="btn red">
+  🚨 Emergência agora
+</a>
+
+    <a href="../pages/socorro-ia.html" class="btn green">
+  🤖 Socorro IA
+</a>
+    <button class="btn blue">📚 Quero Aprender</button>
+    
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="card-stat">
+    <div>⚡</div>
+    <h2 class="red">3 min</h2>
+    <p>Para aprender o básico</p>
+  </div>
+
+  <div class="card-stat">
+    <div>🎯</div>
+    <h2 class="green">100%</h2>
+    <p>Feito para adolescentes</p>
+  </div>
+
+  <div class="card-stat">
+    <div>🏆</div>
+    <h2 class="blue">Salve</h2>
+    <p>Vidas de verdade</p>
+  </div>
+</section>
+
+<!-- EMERGÊNCIAS -->
+<section class="emergency">
+  <h2>🆘 Situações de Emergência</h2>
+
+  <div class="grid">
+
+    <div class="card high">
+      <span class="badge">🚨 URGENTE</span>
+      <div class="emoji">😵</div>
+      <h3>Desmaio</h3>
+      <p>Pessoa perdeu a consciência e não responde</p>
+    </div>
+
+    <div class="card high">
+      <span class="badge">🚨 URGENTE</span>
+      <div class="emoji">🚫</div>
+      <h3>Engasgo</h3>
+      <p>Dificuldade para respirar ou engolir</p>
+    </div>
+
+    <div class="card high">
+      <span class="badge">🚨 URGENTE</span>
+      <div class="emoji">⚡</div>
+      <h3>Crise Epiléptica</h3>
+      <p>Pessoa tendo convulsões</p>
+    </div>
+
+    <div class="card medium">
+      <span class="badge">⚠️ MODERADO</span>
+      <div class="emoji">🩸</div>
+      <h3>Corte</h3>
+      <p>Ferimento com sangramento</p>
+    </div>
+
+    <div class="card medium">
+      <span class="badge">⚠️ MODERADO</span>
+      <div class="emoji">🔥</div>
+      <h3>Queimadura</h3>
+      <p>Lesão por calor ou químicos</p>
+    </div>
+
+    <div class="card low">
+      <span class="badge">✅ BAIXO</span>
+      <div class="emoji">🤕</div>
+      <h3>Queda</h3>
+      <p>Pessoa caiu e pode ter se machucado</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+
+  <div class="feature blue">
+    <h3>🎮 Simulador Interativo</h3>
+    <p>Pratique situações reais em um ambiente seguro</p>
+    <span>Começar agora →</span>
+  </div>
+
+  <div class="feature green">
+    <h3>🎯 Teste seus Conhecimentos</h3>
+    <p>Teste seus conhecimentos em cenários reais</p>
+    <span>Testar agora →</span>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>🌟 Pronto para salvar vidas?</h2>
+  <p>Junte-se a milhares de teens!</p>
+
+  <div class="cta-buttons">
+    <button class="btn blue">🚀 Começar Aprendizado</button>
+    <button class="btn outline">📖 Saber Mais</button>
+  </div>
+</section>
+
+<!-- JS -->
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

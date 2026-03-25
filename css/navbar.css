@@ -1,0 +1,191 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* REMOVE ESTILO PADRÃO DOS LINKS 🔥 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f5f7fa;
+  color: #1f2937;
+}
+
+/* CORES */
+:root {
+  --trust: #1e4db7;
+  --trust-600: #163d91;
+  --trust-light: #e6edff;
+
+  --emergency: #ef4444;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+/* CONTAINER */
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 18px 24px; /* 🔥 um pouco maior */
+}
+
+/* EMPURRA MENU */
+.menu {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* LOGO ANIMADA (CORRIGIDO) */
+.logo-img {
+  width: 50px;
+  border: 3px solid var(--emergency);
+  border-radius: 12px;
+  padding: 4px;
+
+  animation: logoPulse 1.8s infinite ease-in-out;
+}
+
+/* 🔥 ANIMAÇÃO CORRIGIDA (NOME ÚNICO) */
+@keyframes logoPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(239, 68, 68, 0.4);
+  }
+}
+
+.logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--trust);
+}
+
+/* LINKS DO MENU */
+.menu a {
+  padding: 12px 18px;
+  border-radius: 12px;
+  color: #374151;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.menu a:hover {
+  background: var(--trust-light);
+  color: var(--trust);
+  transform: translateY(-2px);
+}
+
+/* ATIVO */
+.menu a.active {
+  background: var(--trust); /* azul forte */
+  color: white;
+  border-radius: 20px;
+
+  padding: 12px 20px;
+
+  box-shadow: 0 4px 12px rgba(30, 77, 183, 0.4);
+
+  transform: translateY(-1px);
+}
+
+/* BOTÃO LOGIN */
+.user-area {
+  margin-left: 20px;
+}
+
+.btn-login {
+  background: var(--trust);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-login:hover {
+  background: var(--trust-600);
+  transform: scale(1.05);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* MENU MOBILE */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 20px;
+  z-index: 999;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-menu a {
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.mobile-menu a:hover {
+  background: var(--trust-light);
+}
+
+.mobile-menu.show {
+  display: flex;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+  .menu.desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
