@@ -11,19 +11,19 @@ body {
   background-color: #e5e5e5;
 }
 
-/* CONTAINER PRINCIPAL */
+/* CONTAINER */
 .pagina-emergencia {
   text-align: center;
-  padding: 30px 20px;
+  padding: 40px 20px;
 }
 
 /* BOTÃO VOLTAR */
 .btn-voltar {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   background: #ddd;
-  padding: 8px 15px;
-  border-radius: 20px;
+  padding: 10px 18px;
+  border-radius: 25px;
   text-decoration: none;
   color: #333;
   font-size: 14px;
@@ -32,32 +32,33 @@ body {
 /* TÍTULO */
 .titulo {
   color: #e60000;
-  font-size: 40px;
+  font-size: 48px;
   margin-bottom: 10px;
 }
 
 /* SUBTÍTULO */
 .subtitulo {
   color: #555;
-  margin-bottom: 30px;
+  font-size: 18px;
+  margin-bottom: 40px;
 }
 
-/* GRID DOS CARDS */
+/* GRID DOS CARDS (IGUAL PRINT) */
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, 300px);
-  gap: 20px;
+  grid-template-columns: repeat(2, 320px);
+  gap: 25px;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-/* CARD BASE */
+/* CARD */
 .card {
-  border-radius: 15px;
-  padding: 30px 20px;
+  border-radius: 20px;
+  padding: 35px 25px;
   color: white;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   transition: 0.3s;
 }
 
@@ -76,17 +77,18 @@ body {
 
 /* ÍCONE */
 .icone {
-  font-size: 40px;
+  font-size: 50px;
   margin-bottom: 10px;
 }
 
 /* TEXTOS */
 .card h2 {
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 15px;
 }
 
@@ -99,15 +101,15 @@ body {
 .alerta {
   background-color: #e60000;
   color: white;
-  padding: 25px;
-  border-radius: 15px;
-  width: 650px;
+  padding: 30px;
+  border-radius: 20px;
+  width: 700px;
   margin: 0 auto;
-  position: relative;
 }
 
 /* TÍTULO ALERTA */
 .alerta h3 {
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -115,24 +117,30 @@ body {
 .contatos {
   display: flex;
   justify-content: space-around;
-  margin: 15px 0;
+  margin: 20px 0;
+  font-size: 16px;
 }
 
-/* BOTÃO LIGAR */
+/* BOTÃO SAMU (IGUAL PRINT - CENTRALIZADO EMBAIXO) */
 .btn-ligar {
+  display: inline-block;
+  margin-top: 10px;
+
   background-color: #cc0000;
-  border: none;
   color: white;
-  padding: 12px 25px;
-  border-radius: 20px;
+  text-decoration: none;
+
+  padding: 15px 30px;
+  font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
+
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+  transition: 0.3s;
 }
 
 .btn-ligar:hover {
   background-color: #b30000;
+  transform: scale(1.05);
 }
