@@ -13,6 +13,7 @@ const googleLoginBtn = document.getElementById("googleLoginBtn");
 const appleLoginBtn = document.getElementById("appleLoginBtn");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
+const statusMessage = document.getElementById("statusMessage");
 const submitBtn = document.getElementById("submitBtn");
 const btnContent = document.getElementById("btnContent");
 const btnLoading = document.getElementById("btnLoading");
@@ -24,11 +25,31 @@ const recoveryPanel = document.getElementById("recoveryPanel");
 const recoveryEmailInput = document.getElementById("emailRecuperacao");
 const recoverBtn = document.getElementById("btnRecuperar");
 
+const showStatus = (message, type = "error") => {
+  if (!statusMessage) {
+    return;
+  }
+
+  statusMessage.textContent = message;
+  statusMessage.classList.remove("hidden", "is-error", "is-success");
+  statusMessage.classList.add(type === "success" ? "is-success" : "is-error");
+};
+
+const clearStatus = () => {
+  if (!statusMessage) {
+    return;
+  }
+
+  statusMessage.textContent = "";
+  statusMessage.classList.add("hidden");
+  statusMessage.classList.remove("is-error", "is-success");
+};
+
 const signInWithProvider = async (provider, providerName) => {
   try {
     const userCredential = await signInWithPopup(auth, provider);
     console.log(`${providerName} login:`, userCredential.user);
-    alert(`Login com ${providerName} realizado com sucesso!`);
+    showStatus(`Login com ${providerName} realizado com sucesso!`, "success");
   } catch (error) {
     let mensagem = `Nao foi possivel entrar com ${providerName}.`;
 
@@ -43,7 +64,7 @@ const signInWithProvider = async (provider, providerName) => {
     }
 
     console.error(`Erro no login com ${providerName}:`, error.code, error.message);
-    alert(mensagem);
+    showStatus(`${mensagem} (${error.code ?? "sem-codigo"})`);
   }
 };
 
@@ -66,12 +87,13 @@ if (appleLoginBtn) {
 if (loginForm && emailInput && passwordInput && submitBtn && btnContent && btnLoading) {
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    clearStatus();
 
     const email = emailInput.value.trim();
     const password = passwordInput.value;
 
     if (!email || !password) {
-      alert("Preencha todos os campos");
+      showStatus("Preencha todos os campos.");
       return;
     }
 
@@ -81,19 +103,29 @@ if (loginForm && emailInput && passwordInput && submitBtn && btnContent && btnLo
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        alert("Login realizado com sucesso!");
         console.log(userCredential.user);
+        showStatus("Login realizado com sucesso!", "success");
+        alert("Login realizado com sucesso!");
       })
       .catch((error) => {
-        let mensagem = "Erro ao logar";
+        let mensagem = "Nao foi possivel realizar login.";
 
         if (error.code === "auth/user-not-found") {
-          mensagem = "Usuario nao existe";
+          mensagem = "Usuario nao existe.";
         } else if (error.code === "auth/wrong-password") {
-          mensagem = "Senha incorreta";
+          mensagem = "Senha incorreta.";
+        } else if (error.code === "auth/invalid-credential") {
+          mensagem = "E-mail ou senha invalidos.";
+        } else if (error.code === "auth/invalid-email") {
+          mensagem = "O e-mail informado e invalido.";
+        } else if (error.code === "auth/network-request-failed") {
+          mensagem = "Falha de rede ao falar com o Firebase.";
+        } else if (error.code === "auth/too-many-requests") {
+          mensagem = "Muitas tentativas. Aguarde um pouco e tente novamente.";
         }
 
-        alert(mensagem);
+        console.error("Erro ao logar:", error.code, error.message);
+        showStatus(`${mensagem} (${error.code ?? "sem-codigo"})`);
       })
       .finally(() => {
         submitBtn.disabled = false;
@@ -105,16 +137,17 @@ if (loginForm && emailInput && passwordInput && submitBtn && btnContent && btnLo
 
 if (registerBtn && registerContent && registerLoading && emailInput && passwordInput) {
   registerBtn.addEventListener("click", () => {
+    clearStatus();
     const email = emailInput.value.trim();
     const password = passwordInput.value;
 
     if (!email || !password) {
-      alert("Preencha todos os campos");
+      showStatus("Preencha todos os campos.");
       return;
     }
 
     if (password.length < 6) {
-      alert("A senha deve ter pelo menos 6 caracteres");
+      showStatus("A senha deve ter pelo menos 6 caracteres.");
       return;
     }
 
@@ -124,21 +157,27 @@ if (registerBtn && registerContent && registerLoading && emailInput && passwordI
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        alert("Conta criada com sucesso! Agora voce pode fazer login.");
         console.log(userCredential.user);
+        showStatus("Conta criada com sucesso! Agora voce pode fazer login.", "success");
+        alert("Conta criada com sucesso! Agora voce pode fazer login.");
       })
       .catch((error) => {
-        let mensagem = "Erro ao criar conta";
+        let mensagem = "Nao foi possivel criar a conta.";
 
         if (error.code === "auth/email-already-in-use") {
-          mensagem = "Este e-mail ja esta em uso";
+          mensagem = "Este e-mail ja esta em uso.";
         } else if (error.code === "auth/weak-password") {
-          mensagem = "Senha muito fraca";
+          mensagem = "Senha muito fraca.";
         } else if (error.code === "auth/invalid-email") {
-          mensagem = "E-mail invalido";
+          mensagem = "E-mail invalido.";
+        } else if (error.code === "auth/network-request-failed") {
+          mensagem = "Falha de rede ao falar com o Firebase.";
+        } else if (error.code === "auth/operation-not-allowed") {
+          mensagem = "Cadastro por e-mail e senha nao esta ativado no Firebase.";
         }
 
-        alert(mensagem);
+        console.error("Erro ao criar conta:", error.code, error.message);
+        showStatus(`${mensagem} (${error.code ?? "sem-codigo"})`);
       })
       .finally(() => {
         registerBtn.disabled = false;
@@ -150,14 +189,19 @@ if (registerBtn && registerContent && registerLoading && emailInput && passwordI
 
 if (recoverBtn && recoveryEmailInput) {
   recoverBtn.addEventListener("click", () => {
+    clearStatus();
     const email = recoveryEmailInput.value.trim();
 
     if (!email) {
-      alert("Informe um e-mail para recuperar a senha");
+      showStatus("Informe um e-mail para recuperar a senha.");
       return;
     }
 
-    resetarSenha(email);
+    resetarSenha(email)
+      .then(() => {
+        showStatus("Solicitacao de recuperacao enviada. Verifique sua caixa de entrada e spam.", "success");
+      })
+      .catch(() => {});
   });
 }
 

@@ -220,6 +220,29 @@ body {
   text-align: center;
 }
 
+.status-message {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.status-message.is-error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+.status-message.is-success {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
 .login-card {
   background: #fff;
   border-radius: 12px;

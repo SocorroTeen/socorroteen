@@ -20,6 +20,7 @@
 
       <h1 class="login-title">Entrar</h1>
       <p class="login-subtitle">Acesse sua conta</p>
+      <p class="status-message hidden" id="statusMessage"></p>
 
       <div class="login-card">
         <form id="loginForm">
@@ -50,6 +51,11 @@
           <button type="submit" class="btn-submit" id="submitBtn">
             <span id="btnContent">Entrar</span>
             <span id="btnLoading" style="display:none;">Carregando...</span>
+          </button>
+
+          <button type="button" class="btn-register" id="registerBtn">
+            <span id="registerContent">Criar conta</span>
+            <span id="registerLoading" style="display:none;">Criando...</span>
           </button>
 
           <button type="button" class="btn-register" id="toggleRecuperacaoBtn">Recuperar Senha</button>
