@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primeiros Socorros – Socorro Teen</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS CORRETO -->
+  <link rel="stylesheet" href="../css/primeiros-socorros.css" />
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div id="navbar-container"></div>
+<script src="../js/loadNavbar.js"></script>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 class="hero__title" id="hero-title">
+      <span class="hero__emoji">🚑</span>
+      Primeiros Socorros
+    </h1>
+
+    <p class="hero__subtitle">
+      Guias rápidos e fáceis para situações de emergência. Clique em qualquer<br />
+      situação para ver o passo a passo detalhado!
+    </p>
+
+    <div class="search">
+      <div class="search__wrap">
+        <svg class="search__icon" viewBox="0 0 20 20">
+          <circle cx="8.5" cy="8.5" r="5.5"/>
+          <line x1="13" y1="13" x2="18" y2="18"/>
+        </svg>
+
+        <input
+          id="search-input"
+          class="search__input"
+          type="search"
+          placeholder="🔍 Buscar situação de emergência..."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- ACESSO RÁPIDO -->
+    <aside class="acesso-rapido">
+      <h2 class="acesso-rapido__title">⚡ Acesso Rápido</h2>
+      <p class="acesso-rapido__sub">
+        Em caso de emergência grave, ligue imediatamente:
+      </p>
+
+      <ul class="acesso-rapido__numbers">
+        <li>🚑 <strong>SAMU: 192</strong></li>
+        <li>🚒 <strong>Bombeiros: 193</strong></li>
+        <li>👮 <strong>Polícia: 190</strong></li>
+      </ul>
+    </aside>
+
+    <!-- CARDS -->
+    <section class="cards-section">
+      <div class="cards-grid cards-grid--3" id="cards-container">
+
+        <article class="card card--urgente" data-titulo="Pessoa Desmaiada">
+          <span class="card__icon">😵</span>
+          <h3 class="card__title">Pessoa Desmaiada</h3>
+          <p class="card__desc">O que fazer quando alguém perde a consciência</p>
+        </article>
+
+        <article class="card card--urgente" data-titulo="Engasgo">
+          <span class="card__icon">🚫</span>
+          <h3 class="card__title">Engasgo</h3>
+          <p class="card__desc">Bloqueio das vias respiratórias</p>
+        </article>
+
+        <article class="card card--urgente" data-titulo="Intoxicação">
+          <span class="card__icon">💀</span>
+          <h3 class="card__title">Intoxicação</h3>
+          <p class="card__desc">Casos de envenenamento</p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- JS CORRETO -->
+<script src="../js/primeiros-socorros.js"></script>
+
+</body>
+</html>
