@@ -37,7 +37,7 @@ body {
 
 /* TÍTULO MAIOR */
 .hero h1 {
-  font-size: 88px; /* 🔥 maior ainda */
+  font-size: 60px; /* 🔥 maior ainda */
   font-weight: 800;
   color: var(--trust);
   margin-bottom: 12px;
@@ -45,7 +45,7 @@ body {
 
 /* TEXTO */
 .hero p {
-  font-size: 24px; /* 🔥 maior */
+  font-size: 20px; /* 🔥 maior */
   color: #4b5563;
   max-width: 800px;
   margin: auto;
