@@ -193,17 +193,17 @@ body {
 
 /* TIPOS */
 .high {
-  border: 2px solid var(--emergency);
+  border: 1.5px solid var(--emergency);
   background: var(--emergency-light);
 }
 
 .medium {
-  border: 2px solid var(--orange);
+  border: 1.5px solid var(--orange);
   background: var(--orange-light);
 }
 
 .low {
-  border: 2px solid var(--success);
+  border: 1.5px solid var(--success);
   background: var(--success-light);
 }
 

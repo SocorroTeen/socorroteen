@@ -109,7 +109,7 @@ img, svg { display: block; }
   gap: 8px;
 }
 .hero__emoji {
-  font-size: 88px;
+  font-size: 60px;
   line-height: 1;
 }
 .hero__subtitle {
@@ -265,10 +265,10 @@ img, svg { display: block; }
   border-radius: 999px;
 }
 .card {
+  display: block; 
+  padding: 0;
   border-radius: 18px;
-  padding: 25px 28px;
-  border: 1.5px solid transparent;
-  display: flex;
+  border: 3px solid transparent;
   flex-direction: column;
   gap: 8px;
   cursor: pointer;
@@ -394,32 +394,58 @@ img, svg { display: block; }
 /* ══════════════════════════════════════════════════════════
    LEMBRETE
 ══════════════════════════════════════════════════════════ */
+/* Container Principal do Lembrete */
 .lembrete {
   background: #e6edff;
   border: 1.5px solid #bfdbfe;
   border-radius: 18px;
   padding: 32px 40px;
   text-align: center;
+  
+  /* Impede que ocupe a tela toda */
+  max-width: 1150px; 
+  /* Centraliza o bloco na página */
+  margin: 20px auto; 
+  /* Garante que o padding não aumente a largura final */
+  box-sizing: border-box; 
 }
+
+/* Estilo do Emoji */
 .lembrete__emoji {
   display: block;
   font-size: 42px;
   margin-bottom: 12px;
 }
+
+/* Estilo do Título */
 .lembrete__title {
   font-size: 20px;
   font-weight: 800;
   color: #1e4db7;
   letter-spacing: -0.2px;
+  margin-top: 0;
   margin-bottom: 12px;
 }
+
+/* Estilo do Texto */
 .lembrete__text {
   font-size: 16px;
   color: #1e4db7;
   font-weight: 600;
   line-height: 1.6;
-  max-width: 680px;
-  margin: 0 auto;
+  margin: 0;
+}
+
+/* Ajuste para Responsividade (Celulares) */
+@media (max-width: 480px) {
+  .lembrete {
+    padding: 20px;
+    margin: 10px; /* Margem pequena nas laterais em telas pequenas */
+  }
+  
+  .lembrete__title {
+    font-size: 18px;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -608,4 +634,15 @@ img, svg { display: block; }
 /* REMOVE sensação de layout “apertado” */
 .cards-section {
   margin-top: 8px;
+}
+
+.acesso-rapido__numbers li a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: inherit;        /* Mantém a cor original do texto */
+  display: block;        /* Aumenta a área de clique para facilitar o toque no celular */
+  padding: 5px 0;
+}
+
+.acesso-rapido__numbers li a:hover {
+  color: #ff0000;        /* Opcional: muda de cor ao passar o mouse */
 }
