@@ -1,19 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situação: Desmaios</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../../css/css situacoes/situacoes.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Socorro Teen – Animais Desmaios</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/css situacoes/situacoes.css"/>
 </head>
 <body>
-    <!-- NAVBAR -->
+
+     <!-- NAVBAR -->
 <div id="navbar-container"></div>
 <script src="../../js/loadNavbar.js"></script>
 
+<!-- MAIN -->
+<div class="container">
 
-    
+  <!-- Top actions -->
+  <div class="top-actions">
+    <a href="javascript:void(0)" class="btn-back" onclick="goBack()">← Voltar</a>
+    <button class="btn-audio" type="button" onclick="toggleAudio()">🔊 Ouvir guia</button>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-card reveal">
+    <span class="hero-emoji">😞</span>
+    <h1 class="hero-title">Desmaios/Síncope</h1>
+    <p class="hero-sub">Perda temporária de consciência</p>
+  </div>
+
+  <div class="steps">
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">1</span>
+        <span class="step-title">Verifique a consciência</span>
+      </div>
+      <p class="step-desc">Chame a pessoa pelo nome e balance levemente os ombros. Se ela não responder e não houver sinais de trauma, foque em recuperar o fluxo sanguíneo.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Nunca balance com força ou jogue água no rosto da pessoa para tentar acordá-la!
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">2</span>
+        <span class="step-title">Eleve as pernas</span>
+      </div>
+      <p class="step-desc">Com a pessoa deitada de costas, eleve as pernas dela acima do nível do coração (cerca de 30 cm). Isso ajuda o sangue a voltar para o cérebro.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Afrouxe roupas apertadas, como cintos, golas ou gravatas, para facilitar a circulação e respiração.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">3</span>
+        <span class="step-title">Garanta a ventilação</span>
+      </div>
+      <p class="step-desc">Mantenha o ambiente arejado. Se houver muitas pessoas em volta, peça para se afastarem para que a vítima receba ar fresco.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Não ofereça álcool ou sal para a pessoa cheirar; isso pode irritar as vias aéreas.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">4</span>
+        <span class="step-title">Posição lateral de segurança</span>
+      </div>
+      <p class="step-desc">Se a pessoa começar a vomitar ou se você precisar se afastar por um momento, vire-a de lado para evitar que ela se engasgue.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Se o desmaio durar mais de 2 minutos, ligue imediatamente para o SAMU (192).
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">5</span>
+        <span class="step-title">Acompanhe o despertar</span>
+      </div>
+      <p class="step-desc">Quando a pessoa acordar, não deixe que ela se levante rápido. Ajude-a a sentar primeiro e espere alguns minutos antes de ela tentar ficar de pé.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Nunca ofereça comida ou bebida até que a pessoa esteja totalmente consciente e alerta.
+      </div>
+    </div>
+
+  </div><div class="info-card reveal">
+    <span class="info-heart">🩵</span>
+    <p>💡 <strong>Dica importante:</strong> Desmaios podem ser causados por calor, queda de pressão, jejum ou estresse. Mesmo que a pessoa melhore, oriente-a a buscar um médico.</p>
+  </div>
+
+ 
+
+  <!-- Emergency contacts -->
+  <div class="emergency-section reveal">
+    <div class="emergency-title">
+      📞 Contatos de Emergência
+    </div>
+    <div class="emergency-grid">
+      <div class="emergency-card">
+        <span class="em-icon">🚑</span>
+        <div class="em-name">SAMU</div>
+        <div class="em-num">192</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">🚒</span>
+        <div class="em-name">Bombeiros</div>
+        <div class="em-num">193</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">👮</span>
+        <div class="em-name">Polícia</div>
+        <div class="em-num">190</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script src="../../js/situacoes.js"></script>
 </body>
 </html>

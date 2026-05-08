@@ -1,18 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situação: Sangramento</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../../css/css situacoes/situacoes.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Socorro Teen – Sangramento</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/css situacoes/situacoes.css"/>
 </head>
 <body>
-    <!-- NAVBAR -->
+
+     <!-- NAVBAR -->
 <div id="navbar-container"></div>
 <script src="../../js/loadNavbar.js"></script>
 
+<!-- MAIN -->
+<div class="container">
 
+  <!-- Top actions -->
+  <div class="top-actions">
+    <a href="javascript:void(0)" class="btn-back" onclick="goBack()">← Voltar</a>
+    <button class="btn-audio" type="button" onclick="toggleAudio()">🔊 Ouvir guia</button>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-card reveal">
+    <span class="hero-emoji">🩸</span>
+    <h1 class="hero-title">Sangramento</h1>
+    <p class="hero-sub">Cortes, ferimentos profundos ou extensos.</p>
+  </div>
+
+  <div class="steps">
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">1</span>
+        <span class="step-title">Pressione o ferimento</span>
+      </div>
+      <p class="step-desc">Use um pano limpo, gaze ou as mãos (preferencialmente com luvas) para fazer pressão direta sobre o local do sangramento por pelo menos 5 a 10 minutos.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Não remova o pano se ele ficar encharcado de sangue! Coloque outro por cima para não interromper a coagulação.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">2</span>
+        <span class="step-title">Eleve o membro atingido</span>
+      </div>
+      <p class="step-desc">Se o sangramento for nos braços ou pernas, mantenha o membro elevado acima do nível do coração, desde que não haja suspeita de fratura.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        A elevação ajuda a diminuir a pressão do sangue na região do corte, facilitando o controle da hemorragia.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">3</span>
+        <span class="step-title">Mantenha a pressão constante</span>
+      </div>
+      <p class="step-desc">Faça um curativo compressivo usando uma faixa ou pedaço de pano para manter a gaze no lugar, garantindo que a pressão continue firme.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Evite fazer torniquetes por conta própria, a menos que o sangramento seja severo e você tenha treinamento específico para isso.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">4</span>
+        <span class="step-title">Verifique sinais de choque</span>
+      </div>
+      <p class="step-desc">Se a perda de sangue for grande, a pessoa pode sentir tontura, frio ou ficar pálida. Deite-a e mantenha-a aquecida até o socorro chegar.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Se houver um objeto encravado (como um caco de vidro), não o remova. Pressione ao redor do objeto para conter o sangue.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">5</span>
+        <span class="step-title">Busque atendimento</span>
+      </div>
+      <p class="step-desc">Cortes profundos, que não param de sangrar ou que mostram tecidos internos precisam de pontos. Ligue para o SAMU (192) se o sangramento for jato ou pulsante.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Lave as mãos cuidadosamente após prestar o socorro para evitar contato com patógenos transmitidos pelo sangue.
+      </div>
+    </div>
+
+  </div><div class="info-card reveal">
+    <span class="info-heart">🩵</span>
+    <p>💡 <strong>Dica importante:</strong> Pequenos ferimentos devem ser lavados apenas com água e sabão neutro antes de serem cobertos por um curativo limpo.</p>
+  </div>
+
+ 
+
+  <!-- Emergency contacts -->
+  <div class="emergency-section reveal">
+    <div class="emergency-title">
+      📞 Contatos de Emergência
+    </div>
+    <div class="emergency-grid">
+      <div class="emergency-card">
+        <span class="em-icon">🚑</span>
+        <div class="em-name">SAMU</div>
+        <div class="em-num">192</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">🚒</span>
+        <div class="em-name">Bombeiros</div>
+        <div class="em-num">193</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">👮</span>
+        <div class="em-name">Polícia</div>
+        <div class="em-num">190</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script src="../../js/situacoes.js"></script>
 </body>
 </html>

@@ -1,17 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situação:Parada cardiorrespiratória</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../../css/css situacoes/situacoes.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Socorro Teen – Parada cardiorrespiratória</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/css situacoes/situacoes.css"/>
 </head>
 <body>
-    <!-- NAVBAR -->
+
+     <!-- NAVBAR -->
 <div id="navbar-container"></div>
 <script src="../../js/loadNavbar.js"></script>
 
+<!-- MAIN -->
+<div class="container">
+
+  <!-- Top actions -->
+  <div class="top-actions">
+    <a href="javascript:void(0)" class="btn-back" onclick="goBack()">← Voltar</a>
+    <button class="btn-audio" type="button" onclick="toggleAudio()">🔊 Ouvir guia</button>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-card reveal">
+    <span class="hero-emoji">😵</span>
+    <h1 class="hero-title">Parada cardiorrespiratória</h1>
+    <p class="hero-sub">perda de consciência e ausência de pulso central</p>
+  </div>
+
+  <div class="steps">
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">1</span>
+        <span class="step-title">Imobilize a região</span>
+      </div>
+      <p class="step-desc">Mantenha a área afetada na posição em que foi encontrada. Evite qualquer movimento que possa agravar a lesão ou causar mais dor.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Nunca tente "colocar o osso no lugar"! Isso pode romper vasos sanguíneos ou nervos.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">2</span>
+        <span class="step-title">Aplique compressas frias</span>
+      </div>
+      <p class="step-desc">Coloque gelo envolvido em um pano sobre o local por 15 a 20 minutos. Isso ajuda a reduzir o inchaço e a aliviar a dor.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Nunca coloque o gelo diretamente sobre a pele para evitar queimaduras pelo frio.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">3</span>
+        <span class="step-title">Faça um improviso (Tala)</span>
+      </div>
+      <p class="step-desc">Se precisar mover a vítima, improvise uma tala com papelão, revistas ou pedaços de madeira, prendendo-os suavemente com faixas ou panos.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Não aperte demais as amarras; verifique se a circulação sanguínea continua normal (se a extremidade não está ficando roxa).
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">4</span>
+        <span class="step-title">Controle sangramentos</span>
+      </div>
+      <p class="step-desc">Em caso de fratura exposta, não tente lavar ou mexer no osso. Cubra o ferimento com um pano limpo ou gaze estéril.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Pressione suavemente ao redor do ferimento para estancar o sangue, sem pressionar o osso diretamente.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">5</span>
+        <span class="step-title">Busque socorro médico</span>
+      </div>
+      <p class="step-desc">Ligue para o SAMU (192) se a vítima não puder se locomover ou se a dor for insuportável. Mantenha a pessoa aquecida e calma.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Não ofereça alimentos ou remédios antes da avaliação médica, pois pode ser necessária uma cirurgia de emergência.
+      </div>
+    </div>
+
+  </div><div class="info-card reveal">
+    <span class="info-heart">🩵</span>
+    <p>💡 <strong>Dica importante:</strong> Na dúvida entre entorse e fratura, trate sempre como se fosse uma fratura. Somente o raio-X pode confirmar a gravidade da lesão.</p>
+  </div>
+
+ 
+
+  <!-- Emergency contacts -->
+  <div class="emergency-section reveal">
+    <div class="emergency-title">
+      📞 Contatos de Emergência
+    </div>
+    <div class="emergency-grid">
+      <div class="emergency-card">
+        <span class="em-icon">🚑</span>
+        <div class="em-name">SAMU</div>
+        <div class="em-num">192</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">🚒</span>
+        <div class="em-name">Bombeiros</div>
+        <div class="em-num">193</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">👮</span>
+        <div class="em-name">Polícia</div>
+        <div class="em-num">190</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script src="../../js/situacoes.js"></script>
 </body>
 </html>

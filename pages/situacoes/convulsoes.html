@@ -1,20 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situação:Convulsões</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../../css/css situacoes/situacoes.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Socorro Teen – Convulsões</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/css situacoes/situacoes.css"/>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
+     <!-- NAVBAR -->
 <div id="navbar-container"></div>
 <script src="../../js/loadNavbar.js"></script>
 
+<!-- MAIN -->
+<div class="container">
 
+  <!-- Top actions -->
+  <div class="top-actions">
+    <a href="javascript:void(0)" class="btn-back" onclick="goBack()">← Voltar</a>
+    <button class="btn-audio" type="button" onclick="toggleAudio()">🔊 Ouvir guia</button>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-card reveal">
+    <span class="hero-emoji">😫</span>
+    <h1 class="hero-title">Convulsões/Crise Epiléptica</h1>
+    <p class="hero-sub">Movimentos involuntários e perda de consciência</p>
+  </div>
+
+  <div class="steps">
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">1</span>
+        <span class="step-title">Proteja a cabeça</span>
+      </div>
+      <p class="step-desc">Afaste objetos próximos que possam machucar a pessoa e coloque algo macio (como uma blusa dobrada) debaixo da cabeça dela.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Nunca tente segurar os braços ou pernas da pessoa para conter os movimentos!
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">2</span>
+        <span class="step-title">Não coloque nada na boca</span>
+      </div>
+      <p class="step-desc">É um mito que a pessoa pode "enrolar a língua". Tentar colocar objetos ou os dedos na boca dela pode causar ferimentos graves em ambos.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Mantenha a calma e apenas observe se a respiração está fluindo após os movimentos pararem.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">3</span>
+        <span class="step-title">Posição lateral de segurança</span>
+      </div>
+      <p class="step-desc">Assim que possível (ou se houver saliva em excesso), vire a pessoa de lado. Isso evita que ela se engasgue ou sufoque.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Nunca jogue água no rosto da pessoa nem ofereça nada para beber ou cheirar.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">4</span>
+        <span class="step-title">Cronometre o tempo</span>
+      </div>
+      <p class="step-desc">Observe quanto tempo dura a crise. Se a convulsão passar de 5 minutos, é uma emergência médica crítica.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Chame o SAMU (192) se for a primeira crise da pessoa ou se ela demorar a recuperar a consciência.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">5</span>
+        <span class="step-title">Acompanhe a recuperação</span>
+      </div>
+      <p class="step-desc">Após a crise, a pessoa ficará confusa e cansada. Fale calmamente com ela e explique o que aconteceu até que ela esteja totalmente lúcida.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Nunca deixe a pessoa sozinha até que ela esteja completamente recuperada!
+      </div>
+    </div>
+
+  </div><div class="info-card reveal">
+    <span class="info-heart">🩵</span>
+    <p>💡 <strong>Dica importante:</strong> Na maioria das vezes, a crise para sozinha em 2 ou 3 minutos. Seu papel principal é evitar que a pessoa se machuque durante o episódio.</p>
+  </div>
+
+ 
+
+  <!-- Emergency contacts -->
+  <div class="emergency-section reveal">
+    <div class="emergency-title">
+      📞 Contatos de Emergência
+    </div>
+    <div class="emergency-grid">
+      <div class="emergency-card">
+        <span class="em-icon">🚑</span>
+        <div class="em-name">SAMU</div>
+        <div class="em-num">192</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">🚒</span>
+        <div class="em-name">Bombeiros</div>
+        <div class="em-num">193</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">👮</span>
+        <div class="em-name">Polícia</div>
+        <div class="em-num">190</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script src="../../js/situacoes.js"></script>
 </body>
 </html>

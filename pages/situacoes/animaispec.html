@@ -1,18 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situação: Acidentes com Animais Peçonhentos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../../css/css situacoes/situacoes.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Socorro Teen – Animais Peçonhentos</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/css situacoes/situacoes.css"/>
 </head>
 <body>
-    <!-- NAVBAR -->
+
+     <!-- NAVBAR -->
 <div id="navbar-container"></div>
 <script src="../../js/loadNavbar.js"></script>
 
-    
+<!-- MAIN -->
+<div class="container">
+
+  <!-- Top actions -->
+  <div class="top-actions">
+    <a href="javascript:void(0)" class="btn-back" onclick="goBack()">← Voltar</a>
+    <button class="btn-audio" type="button" onclick="toggleAudio()">🔊 Ouvir guia</button>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-card reveal">
+    <span class="hero-emoji">🐍</span>
+    <h1 class="hero-title">Animais Peçonhentos</h1>
+    <p class="hero-sub">Exposição ao veneno de animais</p>
+  </div>
+
+ <div class="steps">
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">1</span>
+        <span class="step-title">Afaste-se do animal</span>
+      </div>
+      <p class="step-desc">Mantenha a calma e afaste a vítima do animal para evitar um segundo ataque. Se possível, tire uma foto do bicho à distância.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Nunca tente capturar o animal! A identificação por foto já ajuda muito no hospital.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">2</span>
+        <span class="step-title">Mantenha a vítima em repouso</span>
+      </div>
+      <p class="step-desc">Peça para a pessoa evitar se movimentar. O repouso ajuda a retardar a circulação do veneno pelo corpo.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Mantenha o local da picada, se possível, em uma posição mais alta que o resto do corpo.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">3</span>
+        <span class="step-title">Lave o local e remova acessórios</span>
+      </div>
+      <p class="step-desc">Lave a picada apenas com água e sabão. Retire anéis, pulseiras ou sapatos apertados, pois o local pode inchar rápido.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Não faça torniquetes, não corte o local e nunca tente "sugar" o veneno com a boca!
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">4</span>
+        <span class="step-title">Busque ajuda médica urgente</span>
+      </div>
+      <p class="step-desc">Ligue para o SAMU (192) ou leve a vítima ao hospital de referência mais próximo que possua o soro específico.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Informe ao médico as características do animal (cor, tamanho, formato da cabeça).
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">5</span>
+        <span class="step-title">Monitore os sintomas</span>
+      </div>
+      <p class="step-desc">Observe se surgem dores intensas, suor excessivo, vômitos ou dificuldade para respirar até a chegada ao médico.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Não aplique substâncias caseiras (borra de café, fumo ou ervas) sobre a ferida!
+      </div>
+    </div>
+
+  </div><div class="info-card reveal">
+    <span class="info-heart">🩵</span>
+    <p>💡 <strong>Dica importante:</strong> O tempo é fundamental. O uso do soro antiofídico ou antiescorpiônico deve ser feito o mais rápido possível por profissionais.</p>
+  </div>
+
+  <!-- Emergency contacts -->
+  <div class="emergency-section reveal">
+    <div class="emergency-title">
+      📞 Contatos de Emergência
+    </div>
+    <div class="emergency-grid">
+      <div class="emergency-card">
+        <span class="em-icon">🚑</span>
+        <div class="em-name">SAMU</div>
+        <div class="em-num">192</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">🚒</span>
+        <div class="em-name">Bombeiros</div>
+        <div class="em-num">193</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">👮</span>
+        <div class="em-name">Polícia</div>
+        <div class="em-num">190</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script src="../../js/situacoes.js"></script>
 </body>
 </html>

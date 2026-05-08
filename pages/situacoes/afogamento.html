@@ -1,19 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situação: Afogamento</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
- 
-    <link rel="stylesheet" href="../../css/css situacoes/situacoes.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Socorro Teen – Afogamento</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/css situacoes/situacoes.css"/>
 </head>
 <body>
-    <!-- NAVBAR -->
+
+     <!-- NAVBAR -->
 <div id="navbar-container"></div>
 <script src="../../js/loadNavbar.js"></script>
 
+<!-- MAIN -->
+<div class="container">
 
-    
+  <!-- Top actions -->
+  <div class="top-actions">
+    <a href="javascript:void(0)" class="btn-back" onclick="goBack()">← Voltar</a>
+    <button class="btn-audio" type="button" onclick="toggleAudio()">🔊 Ouvir guia</button>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-card reveal">
+    <span class="hero-emoji">🌊</span>
+    <h1 class="hero-title">Afogamento</h1>
+    <p class="hero-sub">Aspiração de água para os pulmões</p>
+  </div>
+
+ <div class="steps">
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">1</span>
+        <span class="step-title">Retire a vítima da água</span>
+      </div>
+      <p class="step-desc">Leve a pessoa para um local seco e seguro. Mantenha a vítima deitada de costas (decúbito dorsal) em uma superfície plana.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Não se coloque em risco! Use boias ou cordas se não for treinado para resgate.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">2</span>
+        <span class="step-title">Verifique a consciência e chame ajuda</span>
+      </div>
+      <p class="step-desc">Toque nos ombros e chame a pessoa. Peça imediatamente para alguém ligar para o SAMU (192) ou Bombeiros (193).</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Informe claramente que se trata de uma vítima de afogamento para agilizar o suporte.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">3</span>
+        <span class="step-title">Verifique a respiração</span>
+      </div>
+      <p class="step-desc">Observe o tórax por até 10 segundos. No afogamento, se a pessoa não respira, o foco inicial é a oxigenação.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        Se não houver respiração, inicie as manobras de ressuscitação imediatamente!
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">4</span>
+        <span class="step-title">Inicie a RCP (Se necessário)</span>
+      </div>
+      <p class="step-desc">Realize 30 compressões torácicas seguidas de 2 ventilações (respiração boca-a-boca), mantendo o ritmo constante.</p>
+      <div class="tip-box">
+        <span class="pill-icon">✅</span>
+        Não tente "tirar a água" dos pulmões apertando a barriga; isso pode causar vômito.
+      </div>
+    </div>
+
+    <div class="step-card reveal">
+      <div class="step-header">
+        <span class="step-num">5</span>
+        <span class="step-title">Aqueça a vítima</span>
+      </div>
+      <p class="step-desc">Se a pessoa estiver consciente ou após retomar a respiração, remova roupas molhadas e cubra-a com mantas secas.</p>
+      <div class="alert-box">
+        <span class="pill-icon">⚠️</span>
+        A hipotermia é um risco grave após o afogamento. Mantenha a vítima aquecida!
+      </div>
+    </div>
+
+  </div><div class="info-card reveal">
+    <span class="info-heart">🩵</span>
+    <p>💡 <strong>Dica importante:</strong> Mesmo que a pessoa pareça bem após ser retirada da água, ela deve ir ao hospital pelo risco de "afogamento secundário".</p>
+  </div>
+
+  <!-- Emergency contacts -->
+  <div class="emergency-section reveal">
+    <div class="emergency-title">
+      📞 Contatos de Emergência
+    </div>
+    <div class="emergency-grid">
+      <div class="emergency-card">
+        <span class="em-icon">🚑</span>
+        <div class="em-name">SAMU</div>
+        <div class="em-num">192</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">🚒</span>
+        <div class="em-name">Bombeiros</div>
+        <div class="em-num">193</div>
+      </div>
+      <div class="emergency-card">
+        <span class="em-icon">👮</span>
+        <div class="em-name">Polícia</div>
+        <div class="em-num">190</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script src="../../js/situacoes.js"></script>
 </body>
 </html>
