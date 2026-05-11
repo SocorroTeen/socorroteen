@@ -1,4 +1,8 @@
-const currentScriptUrl = new URL(document.currentScript.src, window.location.href);
+import { auth } from "./firebase.js";
+import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
+import { getUserProfile } from "./userSession.js";
+
+const currentScriptUrl = new URL(import.meta.url);
 const projectRootUrl = new URL("../", currentScriptUrl);
 
 const buildProjectUrl = (relativePath) => new URL(relativePath, projectRootUrl);
@@ -28,7 +32,9 @@ const wireNavbarPaths = () => {
     "primeiros-socorros.html": buildProjectUrl("pages/primeiros-socorros.html").href,
     "socorro-ia.html": buildProjectUrl("pages/socorro-ia.html").href,
     "simulador.html": buildProjectUrl("pages/simulador.html").href,
-    "sobre.html": buildProjectUrl("pages/sobre.html").href
+    "ranking.html": buildProjectUrl("pages/ranking.html").href,
+    "sobre.html": buildProjectUrl("pages/sobre.html").href,
+    "profile.html": buildProjectUrl("pages/profile.html").href
   };
 
   document.querySelectorAll(".navbar a[href]").forEach((link) => {
@@ -61,6 +67,43 @@ const markActiveLink = () => {
   });
 };
 
+const logout = async () => {
+  try {
+    await signOut(auth);
+    localStorage.removeItem("socorroteenCurrentUser");
+    window.location.href = buildProjectUrl("pages/indexLogin.html").href;
+  } catch (error) {
+    console.error("Erro ao sair:", error);
+  }
+};
+
+const updateUserArea = (user) => {
+  const userArea = document.getElementById("userArea");
+  const mobileUserArea = document.getElementById("mobileUserArea");
+  const profileHref = buildProjectUrl("pages/profile.html").href;
+
+  if (!userArea || !mobileUserArea) {
+    return;
+  }
+
+  if (!user) {
+    userArea.innerHTML = ``;
+    mobileUserArea.innerHTML = ``;
+    return;
+  }
+
+  const profile = getUserProfile(user.uid);
+  const age = profile?.age || "—";
+
+  userArea.innerHTML = `
+    <a class="user-profile-btn" href="${profileHref}" title="Meu Perfil">👤 ${age}</a>
+  `;
+
+  mobileUserArea.innerHTML = `
+    <a class="mobile-link" href="${profileHref}">👤 Perfil (${age} anos)</a>
+  `;
+};
+
 window.toggleMenu = () => {
   const mobileMenu = document.getElementById("mobileMenu");
   if (mobileMenu) {
@@ -87,6 +130,13 @@ fetch(buildProjectUrl("components/navbar.html").href)
     container.innerHTML = data;
     wireNavbarPaths();
     markActiveLink();
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        localStorage.removeItem("socorroteenCurrentUser");
+      }
+      updateUserArea(user);
+    });
   })
   .catch((error) => {
     console.error("Erro ao carregar navbar:", error);

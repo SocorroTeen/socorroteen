@@ -126,7 +126,9 @@ body {
   margin-left: 20px;
 }
 
-.btn-login {
+.btn-login,
+.btn-profile,
+.btn-logout {
   background: var(--trust);
   color: white;
   padding: 12px 18px;
@@ -135,11 +137,45 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: 0.25s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn-login:hover {
+.btn-profile {
+  background: #10b981;
+  margin-right: 10px;
+}
+
+.btn-logout {
+  background: #ef4444;
+}
+
+.btn-login:hover,
+.btn-profile:hover,
+.btn-logout:hover {
+  transform: scale(1.03);
+}
+
+.btn-login:hover,
+.btn-profile:hover {
   background: var(--trust-600);
-  transform: scale(1.05);
+}
+
+.btn-logout:hover {
+  background: #dc2626;
+}
+
+.mobile-user-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn-login.full,
+.mobile-user-area .btn-login.full {
+  width: 100%;
 }
 
 /* HAMBURGER */

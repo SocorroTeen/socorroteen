@@ -10,7 +10,7 @@
 <body>
   <!-- NAVBAR -->
 <div id="navbar-container"></div>
-<script src="../js/loadNavbar.js"></script>
+<script type="module" src="../js/loadNavbar.js"></script>
 
   <main class="login-page">
     <div class="login-container">
@@ -53,21 +53,8 @@
             <span id="btnLoading" style="display:none;">Carregando...</span>
           </button>
 
-          <button type="button" class="btn-register" id="registerBtn">
-            <span id="registerContent">Criar conta</span>
-            <span id="registerLoading" style="display:none;">Criando...</span>
-          </button>
-
-          <button type="button" class="btn-register" id="toggleRecuperacaoBtn">Recuperar Senha</button>
-
-          <div class="recovery-panel hidden" id="recoveryPanel">
-            <div class="form-group">
-              <label for="emailRecuperacao">E-mail para recuperacao</label>
-              <input type="email" id="emailRecuperacao" class="form-input" placeholder="Seu e-mail">
-            </div>
-
-            <button type="button" class="btn-register" id="btnRecuperar">Enviar link de recuperacao</button>
-          </div>
+          <a href="register.html" class="btn-register" style="justify-content:center; display:flex;">Criar conta</a>
+          <a href="recuperar-senha.html" class="btn-register" style="justify-content:center; display:flex; margin-top: 8px;">Recuperar Senha</a>
         </form>
       </div>
     </div>

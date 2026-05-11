@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Socorro Teen - Criar Conta</title>
+  <link rel="stylesheet" href="../css/styleLogin.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div id="navbar-container"></div>
+  <script src="../js/loadNavbar.js"></script>
+
+  <main class="login-page">
+    <div class="login-container">
+      <div class="login-logo">
+        <img src="../assets/logo.png" alt="logo">
+      </div>
+
+      <h1 class="login-title">Criar conta</h1>
+      <p class="login-subtitle">Preencha seus dados para se cadastrar</p>
+      <p class="status-message hidden" id="statusMessage"></p>
+
+      <div class="login-card">
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input id="name" type="text" class="form-input" placeholder="Seu nome completo">
+            <span id="nameError" class="error-msg"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Idade</label>
+            <input id="age" type="number" class="form-input" placeholder="Sua idade" min="1">
+            <span id="ageError" class="error-msg"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" class="form-input" placeholder="seu@email.com">
+            <span id="emailError" class="error-msg"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input id="password" type="password" class="form-input" placeholder="No mínimo 6 caracteres">
+            <span id="passwordError" class="error-msg"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirmar senha</label>
+            <input id="confirmPassword" type="password" class="form-input" placeholder="Repita a senha">
+            <span id="confirmPasswordError" class="error-msg"></span>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span id="btnContent">Criar conta</span>
+            <span id="btnLoading" style="display:none;">Criando...</span>
+          </button>
+
+          <a href="indexLogin.html" class="btn-register" style="justify-content:center;">Já tenho uma conta</a>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="../js/register.js"></script>
+</body>
+</html>

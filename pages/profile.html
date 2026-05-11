@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Socorro Teen - Meu Perfil</title>
+  <link rel="stylesheet" href="../css/styleLogin.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div id="navbar-container"></div>
+  <script type="module" src="../js/loadNavbar.js"></script>
+
+  <main class="login-page profile-page">
+    <div class="login-container">
+      <div class="profile-avatar-section">
+        <img id="profileAvatar" class="profile-avatar" src="" alt="Foto do perfil">
+        <label class="profile-avatar-upload">
+          <input type="file" id="avatarInput" accept="image/*" style="display:none;">
+          <span class="upload-icon">📸</span>
+        </label>
+      </div>
+
+      <h1 class="login-title">Meu Perfil</h1>
+      <p class="login-subtitle">Gerencie suas informações</p>
+
+      <div class="login-card profile-card">
+        <div class="profile-row editable">
+          <span class="profile-label">Nome</span>
+          <div class="profile-edit-group">
+            <span id="profileName" class="profile-value">...</span>
+            <button type="button" class="edit-btn" id="editNameBtn">✏️</button>
+          </div>
+        </div>
+        <div class="profile-row hidden" id="editNameRow">
+          <span class="profile-label">Novo Nome</span>
+          <div class="profile-edit-group">
+            <input type="text" id="editNameInput" class="form-input" style="flex:1;">
+            <button type="button" class="edit-save-btn" id="saveNameBtn">✓</button>
+            <button type="button" class="edit-cancel-btn" id="cancelNameBtn">✕</button>
+          </div>
+        </div>
+        
+        <div class="profile-row">
+          <span class="profile-label">E-mail</span>
+          <span id="profileEmail" class="profile-value">...</span>
+        </div>
+        
+        <div class="profile-row editable">
+          <span class="profile-label">Idade</span>
+          <div class="profile-edit-group">
+            <span id="profileAge" class="profile-value">...</span>
+            <button type="button" class="edit-btn" id="editAgeBtn">✏️</button>
+          </div>
+        </div>
+        <div class="profile-row hidden" id="editAgeRow">
+          <span class="profile-label">Nova Idade</span>
+          <div class="profile-edit-group">
+            <input type="number" id="editAgeInput" class="form-input" style="flex:1;" min="1">
+            <button type="button" class="edit-save-btn" id="saveAgeBtn">✓</button>
+            <button type="button" class="edit-cancel-btn" id="cancelAgeBtn">✕</button>
+          </div>
+        </div>
+
+        <button type="button" id="logoutBtn" class="btn-submit">Sair</button>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="../js/profile.js"></script>
+</body>
+</html>

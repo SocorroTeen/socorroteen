@@ -3,10 +3,9 @@ import {
   GoogleAuthProvider,
   OAuthProvider,
   signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword
+  signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
-import { resetarSenha } from "./auth.js";
+import { setCurrentUser } from "./userSession.js";
 
 const loginForm = document.getElementById("loginForm");
 const googleLoginBtn = document.getElementById("googleLoginBtn");
@@ -17,13 +16,6 @@ const statusMessage = document.getElementById("statusMessage");
 const submitBtn = document.getElementById("submitBtn");
 const btnContent = document.getElementById("btnContent");
 const btnLoading = document.getElementById("btnLoading");
-const registerBtn = document.getElementById("registerBtn");
-const registerContent = document.getElementById("registerContent");
-const registerLoading = document.getElementById("registerLoading");
-const toggleRecoveryBtn = document.getElementById("toggleRecuperacaoBtn");
-const recoveryPanel = document.getElementById("recoveryPanel");
-const recoveryEmailInput = document.getElementById("emailRecuperacao");
-const recoverBtn = document.getElementById("btnRecuperar");
 
 const showStatus = (message, type = "error") => {
   if (!statusMessage) {
@@ -49,7 +41,11 @@ const signInWithProvider = async (provider, providerName) => {
   try {
     const userCredential = await signInWithPopup(auth, provider);
     console.log(`${providerName} login:`, userCredential.user);
-    showStatus(`Login com ${providerName} realizado com sucesso!`, "success");
+    setCurrentUser(userCredential.user.uid);
+    showStatus(`Login com ${providerName} realizado com sucesso! Redirecionando...`, "success");
+    setTimeout(() => {
+      window.location.href = "profile.html";
+    }, 1000);
   } catch (error) {
     let mensagem = `Nao foi possivel entrar com ${providerName}.`;
 
@@ -104,8 +100,11 @@ if (loginForm && emailInput && passwordInput && submitBtn && btnContent && btnLo
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential.user);
-        showStatus("Login realizado com sucesso!", "success");
-        alert("Login realizado com sucesso!");
+        setCurrentUser(userCredential.user.uid);
+        showStatus("Login realizado com sucesso! Redirecionando para seu perfil...", "success");
+        setTimeout(() => {
+          window.location.href = "profile.html";
+        }, 1000);
       })
       .catch((error) => {
         let mensagem = "Nao foi possivel realizar login.";
@@ -135,85 +134,4 @@ if (loginForm && emailInput && passwordInput && submitBtn && btnContent && btnLo
   });
 }
 
-if (registerBtn && registerContent && registerLoading && emailInput && passwordInput) {
-  registerBtn.addEventListener("click", () => {
-    clearStatus();
-    const email = emailInput.value.trim();
-    const password = passwordInput.value;
 
-    if (!email || !password) {
-      showStatus("Preencha todos os campos.");
-      return;
-    }
-
-    if (password.length < 6) {
-      showStatus("A senha deve ter pelo menos 6 caracteres.");
-      return;
-    }
-
-    registerBtn.disabled = true;
-    registerContent.style.display = "none";
-    registerLoading.style.display = "block";
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential.user);
-        showStatus("Conta criada com sucesso! Agora voce pode fazer login.", "success");
-        alert("Conta criada com sucesso! Agora voce pode fazer login.");
-      })
-      .catch((error) => {
-        let mensagem = "Nao foi possivel criar a conta.";
-
-        if (error.code === "auth/email-already-in-use") {
-          mensagem = "Este e-mail ja esta em uso.";
-        } else if (error.code === "auth/weak-password") {
-          mensagem = "Senha muito fraca.";
-        } else if (error.code === "auth/invalid-email") {
-          mensagem = "E-mail invalido.";
-        } else if (error.code === "auth/network-request-failed") {
-          mensagem = "Falha de rede ao falar com o Firebase.";
-        } else if (error.code === "auth/operation-not-allowed") {
-          mensagem = "Cadastro por e-mail e senha nao esta ativado no Firebase.";
-        }
-
-        console.error("Erro ao criar conta:", error.code, error.message);
-        showStatus(`${mensagem} (${error.code ?? "sem-codigo"})`);
-      })
-      .finally(() => {
-        registerBtn.disabled = false;
-        registerContent.style.display = "block";
-        registerLoading.style.display = "none";
-      });
-  });
-}
-
-if (recoverBtn && recoveryEmailInput) {
-  recoverBtn.addEventListener("click", () => {
-    clearStatus();
-    const email = recoveryEmailInput.value.trim();
-
-    if (!email) {
-      showStatus("Informe um e-mail para recuperar a senha.");
-      return;
-    }
-
-    resetarSenha(email)
-      .then(() => {
-        showStatus("Solicitacao de recuperacao enviada. Verifique sua caixa de entrada e spam.", "success");
-      })
-      .catch(() => {});
-  });
-}
-
-if (toggleRecoveryBtn && recoveryPanel && recoveryEmailInput) {
-  toggleRecoveryBtn.addEventListener("click", () => {
-    const panelWasHidden = recoveryPanel.classList.contains("hidden");
-
-    recoveryPanel.classList.toggle("hidden");
-
-    if (panelWasHidden) {
-      recoveryEmailInput.value = emailInput ? emailInput.value.trim() : "";
-      recoveryEmailInput.focus();
-    }
-  });
-}

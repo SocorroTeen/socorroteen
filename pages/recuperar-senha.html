@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Socorro Teen - Recuperar Senha</title>
+  <link rel="stylesheet" href="../css/styleLogin.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div id="navbar-container"></div>
+  <script type="module" src="../js/loadNavbar.js"></script>
+
+  <main class="login-page">
+    <div class="login-container">
+      <div class="login-logo">
+        <img src="../assets/logo.png" alt="logo">
+      </div>
+
+      <h1 class="login-title">Recuperar senha</h1>
+      <p class="login-subtitle">Envie um link para redefinir sua senha</p>
+      <p class="status-message hidden" id="statusMessage"></p>
+
+      <div class="login-card">
+        <form id="recoverForm">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" class="form-input" placeholder="seu@email.com">
+            <span id="emailError" class="error-msg"></span>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span id="btnContent">Enviar link</span>
+            <span id="btnLoading" style="display:none;">Enviando...</span>
+          </button>
+
+          <a href="indexLogin.html" class="btn-register" style="justify-content:center;">Voltar para login</a>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="../js/recover.js"></script>
+</body>
+</html>
