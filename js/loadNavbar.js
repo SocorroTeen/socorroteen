@@ -80,6 +80,8 @@ const logout = async () => {
 const updateUserArea = (user) => {
   const userArea = document.getElementById("userArea");
   const mobileUserArea = document.getElementById("mobileUserArea");
+  const loginLinkDesktop = document.getElementById("loginLinkDesktop");
+  const loginLinkMobile = document.getElementById("loginLinkMobile");
   const profileHref = buildProjectUrl("pages/profile.html").href;
 
   if (!userArea || !mobileUserArea) {
@@ -89,18 +91,28 @@ const updateUserArea = (user) => {
   if (!user) {
     userArea.innerHTML = ``;
     mobileUserArea.innerHTML = ``;
+    if (loginLinkDesktop) {
+      loginLinkDesktop.style.display = "";
+    }
+    if (loginLinkMobile) {
+      loginLinkMobile.style.display = "";
+    }
     return;
   }
 
-  const profile = getUserProfile(user.uid);
-  const age = profile?.age || "—";
+  if (loginLinkDesktop) {
+    loginLinkDesktop.style.display = "none";
+  }
+  if (loginLinkMobile) {
+    loginLinkMobile.style.display = "none";
+  }
 
   userArea.innerHTML = `
-    <a class="user-profile-btn" href="${profileHref}" title="Meu Perfil">👤 ${age}</a>
+    <a class="user-profile-btn" href="${profileHref}" title="Meu Perfil">👤 User</a>
   `;
 
   mobileUserArea.innerHTML = `
-    <a class="mobile-link" href="${profileHref}">👤 Perfil (${age} anos)</a>
+    <a class="mobile-link" href="${profileHref}">👤 User</a>
   `;
 };
 

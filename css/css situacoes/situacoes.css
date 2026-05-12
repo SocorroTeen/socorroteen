@@ -104,6 +104,14 @@ header {
   transition: opacity .6s ease, transform .6s ease;
 }
 .hero-card.visible { opacity: 1; transform: translateY(0); }
+.hero-card.hero-moderado {
+  background: #fff7ed;
+  border-color: #fdba74;
+}
+.hero-card.hero-baixo {
+  background: #f0fdf4;
+  border-color: #6ee7b7;
+}
 .hero-emoji { font-size: 3.5rem; margin-bottom: 14px; display: block; }
 .hero-title {
   font-family: 'Poppins', sans-serif;

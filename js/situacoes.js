@@ -83,4 +83,28 @@ function toggleAudio() {
   btn.style.background = '#c62828';
   window.speechSynthesis.speak(speechUtterance);
 }
+
+function applySituationHeroColor() {
+  const severityByPage = {
+    'PCR.html': 'urgente',
+    'engasgo.html': 'urgente',
+    'afogamento.html': 'urgente',
+    'sangramento.html': 'urgente',
+    'queimaduras.html': 'moderado',
+    'convulsoes.html': 'moderado',
+    'animaispec.html': 'moderado',
+    'desmaios.html': 'baixo',
+    'fratura.html': 'baixo'
+  };
+
+  const pageName = window.location.pathname.split('/').pop();
+  const heroCard = document.querySelector('.hero-card');
+  const severity = severityByPage[pageName];
+
+  if (heroCard && severity) {
+    heroCard.classList.add(`hero-${severity}`);
+  }
+}
+
+applySituationHeroColor();
  
